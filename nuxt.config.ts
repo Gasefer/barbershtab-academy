@@ -8,8 +8,8 @@ export default defineNuxtConfig({
     "@": "src/",
   },
   nitro: {
-    preset: 'vercel'
-  }
+    preset: "vercel",
+  },
   css: ["~/assets/scss/index.scss"],
   app: {
     head: {
