@@ -1,0 +1,363 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $main-font;
+  margin: 0;
+  padding: 0;
+  background-color: $background-dark;
+  color: $text-light;
+  overflow-x: hidden;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 700px;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $text-light;
+  padding: 80px 20px;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../../../public/images/photo1.webp");
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+  }
+
+  &__logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $accent-font;
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 5px;
+    color: $primary-gold;
+    text-transform: uppercase;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-family: $accent-font;
+    font-size: 2.5rem;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    color: $primary-gold;
+    text-transform: uppercase;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+    color: lighten($text-light, 10%);
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__tagline {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $text-light;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+/* Courses Section */
+.courses-section {
+  padding: 60px 20px;
+  background-color: $background-dark;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Course Card */
+.course-card {
+  background-color: $card-background-dark;
+  border: 1px solid $border-color-dark;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  }
+
+  &__header {
+    position: relative;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    z-index: 1;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    font-family: $accent-font;
+    font-size: 1.8rem;
+    color: $primary-gold;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  }
+
+  &__body {
+    padding: 20px;
+    color: $text-light;
+    flex-grow: 1;
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+  }
+
+  &__list-item {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.4;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: $primary-gold;
+      font-weight: bold;
+    }
+  }
+
+  &__price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-gold;
+    margin-top: 20px;
+    text-align: right;
+  }
+}
+
+/* Teachers Section */
+.teachers-section {
+  padding: 60px 20px;
+  background-color: $card-background-dark;
+  text-align: center;
+  border-top: 1px solid $border-color-dark;
+
+  &__title {
+    font-family: $accent-font;
+    font-size: 2.5rem;
+    color: $primary-gold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  &__grid {
+    display: flex;
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+/* Teacher Card */
+.teacher-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min-content;
+  background-color: $background-dark;
+  border: 1px solid $border-color-dark;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &__image {
+    width: 270px;
+    height: 270px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 3px solid $primary-gold;
+    margin-bottom: 15px;
+  }
+
+  &__name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $text-light;
+    margin: 0;
+  }
+  @media (max-width: 480px) {
+    min-width: 270px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-section__title {
+    font-size: 3rem;
+  }
+  .hero-section__subtitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 500px;
+    padding: 60px 15px;
+  }
+  .hero-section__title {
+    font-size: 2.2rem;
+  }
+  .hero-section__subtitle {
+    font-size: 1.5rem;
+  }
+  .hero-section__description,
+  .hero-section__tagline {
+    font-size: 0.9rem;
+  }
+
+  .courses-section,
+  .teachers-section {
+    padding: 40px 15px;
+  }
+
+  .courses-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card__title {
+    font-size: 1.5rem;
+  }
+
+  .teachers-section__title {
+    font-size: 2rem;
+  }
+
+  .teachers-section__grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .teacher-card__image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section__title {
+    font-size: 1.8rem;
+  }
+  .hero-section__subtitle {
+    font-size: 1.2rem;
+  }
+  .hero-section__description,
+  .hero-section__tagline {
+    font-size: 0.8rem;
+  }
+  .course-card__title {
+    font-size: 1.3rem;
+  }
+  .course-card__price {
+    font-size: 1.2rem;
+  }
+}

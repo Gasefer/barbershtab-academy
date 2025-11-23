@@ -1,0 +1,141 @@
+$bg-dark: #0b1120;
+$text-color: #94a3b8;
+$text-hover: #ffffff;
+$primary-blue: #3b82f6;
+$primary-blue-hover: #2563eb;
+
+.header {
+  position: sticky;
+  width: 100%;
+  background-color: $bg-dark;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border: 2px solid #3b82f6;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &__logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  &__nav {
+    // display: none;
+
+    @media (min-width: 480px) {
+      display: block;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 32px;
+  }
+
+  &__nav-link {
+    color: $text-color;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $text-hover;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-color;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $text-hover;
+    }
+  }
+
+  &__icon {
+    fill: currentColor;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: $primary-blue;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-blue-hover;
+    }
+  }
+
+  &__btn-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__nav {
+      &-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      &-item {
+        text-decoration: underline;
+      }
+    }
+
+    &__socials {
+      display: none;
+    }
+
+    &__btn {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+}
