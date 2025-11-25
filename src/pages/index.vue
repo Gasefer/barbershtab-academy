@@ -34,6 +34,13 @@
               <h3 class="course-card__title">
                 Індивідуальний курс “Барбер з нуля”
               </h3>
+              <div class="course-card__image-wrapper">
+                <NuxtImg
+                  src="/images/course1.webp"
+                  alt="Course 1"
+                  class="course-card__image"
+                />
+              </div>
             </div>
             <div class="course-card__body">
               <p class="course-card__text">
@@ -100,6 +107,13 @@
               <h3 class="course-card__title">
                 Індивідуальний курс “Підвищення кваліфікації барбера”
               </h3>
+              <div class="course-card__image-wrapper">
+                <NuxtImg
+                  src="/images/course2.webp"
+                  alt="Course 2"
+                  class="course-card__image"
+                />
+              </div>
             </div>
             <div class="course-card__body">
               <p class="course-card__text">
@@ -156,6 +170,13 @@
               <h3 class="course-card__title">
                 Індивідуальний курс “Оформлення бороди”
               </h3>
+              <div class="course-card__image-wrapper">
+                <NuxtImg
+                  src="/images/course3.webp"
+                  alt="Course 3"
+                  class="course-card__image"
+                />
+              </div>
             </div>
             <div class="course-card__body">
               <p class="course-card__text">
@@ -202,6 +223,13 @@
               <h3 class="course-card__title">
                 Індивідуальний курс «Чоловіча біозавивка»
               </h3>
+              <div class="course-card__image-wrapper">
+                <NuxtImg
+                  src="/images/course4.webp"
+                  alt="Course 4"
+                  class="course-card__image"
+                />
+              </div>
             </div>
             <div class="course-card__body">
               <p class="course-card__text">
